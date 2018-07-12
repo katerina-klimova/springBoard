@@ -31,6 +31,7 @@ public class UserRepository {
         Object [] args = {login};
         List<User> lu = jdbcTemplate.query(sql,args,new UserRowMapper());
         if (!lu.isEmpty()){ return lu.get(0);}
+        //test comment
         else throw new NotFoundException("user with login=" + login+ " not found");
     }
 
