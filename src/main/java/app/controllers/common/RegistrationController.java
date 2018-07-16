@@ -57,7 +57,7 @@ public class RegistrationController {
         if (isCorrect) {
             user.setPassword(passowrdEncoder.encode(pass));
             userServ.addUser(user);
-            model.addAttribute("successAdd", "Вы успешно зарегистрированы. Теперь можете войти в систему.");
+            model.addAttribute("successAdd", "Вы успешно зарегистрированы. Теперь дождитесь подтверждения адмнимстратором.");
             return "/login";
         } else return "/registration";
     }

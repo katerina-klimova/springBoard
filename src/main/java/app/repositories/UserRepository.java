@@ -26,6 +26,10 @@ public class UserRepository {
         return jdbcTemplate.query("select * from users", new UserRowMapper());
     }
 
+    public List<User> getNewUsers() {
+        return jdbcTemplate.query("select * from users where new_user=true", new UserRowMapper());
+    }
+
     public User getUserByLogin(String login) throws NotFoundException {
         String sql = "select * from users where login=?";
         Object [] args = {login};
@@ -37,8 +41,15 @@ public class UserRepository {
 
     public void addUser(User user){
 
-        String sql = "insert into users (login, pass word, fio, role,activity) values(?,?,?,?, true) ";
+        String sql = "insert into users (login, password, fio, role,activity) values(?,?,?,?, false) ";
         Object [] args ={user.getLogin(),user.getPassword(),user.getFIO(),user.getRole()};
         jdbcTemplate.update(sql,args);
     }
+
+    public void changeStatus(User user){
+        String sql = "update users set activity=true, new_user=false where login=?";
+        Object [] args = {user.getLogin()};
+        jdbcTemplate.update(sql,args);
+    }
+
 }

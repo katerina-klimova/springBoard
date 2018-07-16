@@ -14,7 +14,7 @@
 </head>
 <body>
 <div id="wrapper" class="toggled">
-    <%@include file="../menu.jsp" %>
+    <%@include file="../menuusers.jsp" %>
     <div id="page-content-wrapper">
 
 <table>

@@ -30,4 +30,6 @@ public class User {
     private String Email;
     @Column
     private boolean activity;
+    @Column(name="new_user")
+    private boolean isNew;
 }

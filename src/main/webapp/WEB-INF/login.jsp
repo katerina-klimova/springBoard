@@ -36,7 +36,11 @@
                 Check email and password!
             </div>
         </c:if>
-
+        <c:if test="${newAdd!=null}">
+            <div id="message-div" class="alert alert-danger">
+                ${newAdd}
+            </div>
+        </c:if>
         <c:if test="${successAdd!=null}">
             <div id="message-div" class="alert alert-success">
                     ${successAdd}

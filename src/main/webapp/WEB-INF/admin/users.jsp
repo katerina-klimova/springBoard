@@ -20,20 +20,22 @@
 </head>
 <body>
 <div id="wrapper" class="toggled">
-    <%@include file="../menu.jsp" %>
+    <%@include file="../menuusers.jsp" %>
     <div id="page-content-wrapper">
         <table>
             <c:forEach items="${allusers}" var="user" varStatus="num">
+
                 <tr>
-                    <td><c:out value=" ${num.index+1}"/></td>
-                    <td><c:out value=" ${user.getId()}"/></td>
-                    <td><c:out value=" ${user.getLogin()}"/></td>
-                    <td><c:out value=" ${user.getPassword()}"/></td>
-                    <td><c:out value=" ${user.getRole()}"/></td>
-                    <td><c:out value=" ${user.getFIO()}"/></td>
-                    <td><c:out value=" ${user.getEmail()}"/></td>
-                    <td><c:out value=" ${user.isActivity()}"/></td>
+                    <td><c:out value=" ${num.index+1}"/>    </td>
+                    <td><c:out value=" ${user.getId()}"/>    </td>
+                    <td><c:out value=" ${user.getLogin()}"/>    </td>
+                    <td><c:out value=" ${user.getPassword()}"/>    </td>
+                    <td><c:out value=" ${user.getRole()}"/>    </td>
+                    <td><c:out value=" ${user.getFIO()}"/>    </td>
+                    <td><c:out value=" ${user.getEmail()}"/>    </td>
+                    <td><c:out value=" ${user.isActivity()}"/>    </td>
                 </tr>
+
             </c:forEach>
         </table>
     </div>

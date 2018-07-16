@@ -21,7 +21,7 @@ public class UserController {
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "admin/users")
-    public String renderUsers(Model model){
+    public String renderUsers(Model model) {
         List<User> users = userServ.getAllUsersServ();
         model.addAttribute("allusers", users);
         return "admin/users";
