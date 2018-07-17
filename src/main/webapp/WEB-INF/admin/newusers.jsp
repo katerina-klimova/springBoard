@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c"
            uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>Title</title>
@@ -21,19 +21,19 @@
             <c:forEach items="${allnewusers}" var="user" varStatus="num">
 
                 <tr>
-                    <form:form action="/admin/newusers" method="post" path = "newusers" modelAttribute="user">
-                        <td> <input type="hidden" name = login value="${user.getLogin()}"></td>
-                    <td><c:out value=" ${num.index+1}"/>    </td>
-                    <td><c:out value=" ${user.getId()}"/>    </td>
-                    <td><c:out value=" ${user.getLogin()}"/> </td>
-                    <td><c:out value=" ${user.getPassword()}"/>    </td>
-                    <td><c:out value=" ${user.getRole()}"/>    </td>
-                    <td><c:out value=" ${user.getFIO()}"/>    </td>
-                    <td><c:out value=" ${user.getEmail()}"/>    </td>
-                    <td><c:out value=" ${user.isActivity()}"/>    </td>
-                    <td>
-                        <button type="submit">    Approve    </button>
-                    </td>
+                    <form:form action="/admin/newusers" method="post" path="newusers" modelAttribute="user">
+                        <td><input type="hidden" name="login" value="${user.getLogin()}"></td>
+                        <td><c:out value=" ${num.index+1}"/></td>
+                        <td><c:out value=" ${user.getId()}"/></td>
+                        <td><c:out value=" ${user.getLogin()}"/></td>
+                        <td><c:out value=" ${user.getPassword()}"/></td>
+                        <td><c:out value=" ${user.getRole()}"/></td>
+                        <td><c:out value=" ${user.getFIO()}"/></td>
+                        <td><c:out value=" ${user.getEmail()}"/></td>
+                        <td><c:out value=" ${user.isActivity()}"/></td>
+                        <td>
+                            <button type="submit"> Approve</button>
+                        </td>
                     </form:form>
                 </tr>
 

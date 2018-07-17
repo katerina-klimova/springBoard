@@ -33,8 +33,8 @@ public class NewUsersController {
     public String approveNewUsers(@RequestParam String login, Model model) throws NotFoundException {
         User user = userServ.getUserByLogin(login);
         userServ.changeStatus(user);
-        List<User> users = userServ.getNewUsersServ();
-        model.addAttribute("allnewusers", users);
-        return "admin/newusers";
+        //List<User> users = userServ.getNewUsersServ();
+       // model.addAttribute("allnewusers", users);
+        return "redirect:admin/newusers";
     }
 }
