@@ -33,10 +33,9 @@
         </form>
         <c:if test="${not empty param.get(\"error\")}">
             <div id="message-div" class="alert alert-danger">
-                Check email and password!
+                Check email and password! User is not active or does not exsists.
             </div>
         </c:if>
-
         <c:if test="${successAdd!=null}">
             <div id="message-div" class="alert alert-success">
                     ${successAdd}

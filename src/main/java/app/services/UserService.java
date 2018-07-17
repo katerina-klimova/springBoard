@@ -21,11 +21,16 @@ public class UserService {
     public List<User> getAllUsersServ(){
         return userRepo.getAllUsers();
     }
+    public List<User> getNewUsersServ(){
+        return userRepo.getNewUsers();
+    }
 
     public User getUserByLogin(String login) throws NotFoundException {
         return userRepo.getUserByLogin(login);
     }
-
+    public void changeStatus(User user){
+        userRepo.changeStatus(user);
+    }
     public void addUser(User user){
         userRepo.addUser(user);
     }

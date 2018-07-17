@@ -36,7 +36,7 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter{
     @Autowired
     public void configAuthentication(AuthenticationManagerBuilder auth, PasswordEncoder passwordEncoder) throws Exception {
         auth.jdbcAuthentication().dataSource(dataSource).
-                usersByUsernameQuery("select login as username,password,activity as active from users where login = ?").
+                usersByUsernameQuery("select login as username,password,activity as active  from users where login = ?").
                 passwordEncoder(passwordEncoder).authoritiesByUsernameQuery("select login as username, role from users where login = ?");
 
     }
