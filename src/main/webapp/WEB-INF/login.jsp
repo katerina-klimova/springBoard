@@ -26,19 +26,14 @@
 
 <div class="row">
     <div class="col-md-3 col-md-offset-4">
-        <form action="/login" method="post">
+        <form:form action="/login" method="post">
             <label for="log">Login:</label><input id="log" class="form-control" type="text" name="username"><br/>
             <label for="pas">Password:</label><input id="pas" class="form-control" type="password" name="password"><br/>
             <button class="btn btn-success" type="submit" name="login">Log In</button>
-        </form>
+        </form:form>
         <c:if test="${not empty param.get(\"error\")}">
             <div id="message-div" class="alert alert-danger">
-                Check email and password!
-            </div>
-        </c:if>
-        <c:if test="${newAdd!=null}">
-            <div id="message-div" class="alert alert-danger">
-                ${newAdd}
+                Check email and password! User is not active or does not exsists.
             </div>
         </c:if>
         <c:if test="${successAdd!=null}">

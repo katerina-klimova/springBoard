@@ -38,10 +38,16 @@
 
         <security:authorize access="hasRole(\"ADMIN\")">
             <li>
+                <a href="/admin/users">All Users</a>
+            </li>
+            <li>
                 <a href="/admin/newusers">New Users</a>
             </li>
-        </security:authorize>
 
+        </security:authorize>
+        <li>
+            <a href="/user/items">My items</a>
+        </li>
         <li>
             <a href="/logout">Log Out</a>
         </li>
