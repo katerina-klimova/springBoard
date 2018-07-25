@@ -29,7 +29,7 @@ public class ItemController {
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/user/items")
-    public String renderUsers(Model model, HttpSession hs){
+    public String renderItems(Model model, HttpSession hs){
         Long id = userDataService.getCurrentUser().getId();
         List<Item> items = itemService.getMyItems(Math.toIntExact(id));
         Item item = new Item();
