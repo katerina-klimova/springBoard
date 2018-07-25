@@ -55,15 +55,4 @@ public class AppConfig  extends WebMvcConfigurerAdapter{
 
 
 
-    @Bean
-    public UserRepository userRepository(){return new UserRepository(jdbctempl(dataSource()));}
-
-    @Bean
-    public UserService userService(){return new UserService(userRepository());}
-
-    @Bean
-    public ItemRepository itemRepository(){return new ItemRepository(jdbctempl(dataSource()));}
-
-    @Bean
-    public ItemService itemService(){return new ItemService(itemRepository());}
 }
