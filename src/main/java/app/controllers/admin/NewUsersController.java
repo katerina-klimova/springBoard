@@ -35,6 +35,6 @@ public class NewUsersController {
         userServ.changeStatus(user);
         //List<User> users = userServ.getNewUsersServ();
        // model.addAttribute("allnewusers", users);
-        return "redirect:admin/newusers";
+        return "redirect:/admin/newusers";
     }
 }

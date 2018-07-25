@@ -66,4 +66,6 @@ public class AppConfig  extends WebMvcConfigurerAdapter{
 
     @Bean
     public ItemService itemService(){return new ItemService(itemRepository());}
+
+
 }
