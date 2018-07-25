@@ -52,7 +52,7 @@ public class AppConfig  extends WebMvcConfigurerAdapter{
     public JdbcTemplate jdbctempl(DataSource dataSource){
         return new JdbcTemplate(dataSource);
     }
-    
+
 
 
 }

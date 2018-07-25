@@ -21,7 +21,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../resources/main.css">
-    <link rel="stylesheet" href="../resources/simple-sidebar.css">
+    <link rel="stylesheet" href="../../resources/simple-sidebar.css">
 
     <script
             src="http://code.jquery.com/jquery-3.3.1.js"
