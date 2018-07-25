@@ -21,7 +21,7 @@
             <c:forEach items="${allnewusers}" var="user" varStatus="num">
 
                 <tr>
-                    <form:form action="/admin/newusers" method="post" path="newusers" modelAttribute="user">
+                    <form:form action="/admin/newusers" method="post" modelAttribute="user">
                         <td><input type="hidden" name="login" value="${user.getLogin()}"></td>
                         <td><c:out value=" ${num.index+1}"/></td>
                         <td><c:out value=" ${user.getId()}"/></td>
