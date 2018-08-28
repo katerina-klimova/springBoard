@@ -3,6 +3,7 @@ package app.entities.mappers;
 import app.entities.Item;
 import org.springframework.jdbc.core.RowMapper;
 
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -14,7 +15,7 @@ public class ItemRowMapper implements RowMapper<Item>{
         result.setId(resultSet.getLong("id"));
         result.setName(resultSet.getString("name"));
         result.setDescription(resultSet.getString("description"));
-        result.setCost(resultSet.getDouble("cost"));
+        result.setCost(BigDecimal.valueOf(resultSet.getDouble("cost")));
         result.setStatus(resultSet.getBoolean("status"));
         result.setIdUser(resultSet.getLong("id_user"));
         return result;

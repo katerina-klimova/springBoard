@@ -1,5 +1,6 @@
 package app.init;
 
+import app.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -7,8 +8,11 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 @Configuration
@@ -38,6 +42,9 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter{
         auth.jdbcAuthentication().dataSource(dataSource).
                 usersByUsernameQuery("select login as username,password,activity as active  from users where login = ?").
                 passwordEncoder(passwordEncoder).authoritiesByUsernameQuery("select login as username, role from users where login = ?");
+       /* Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        User user = (User)authentication.getPrincipal();
+        hs.setAttribute("id",user.getId());*/
 
     }
 
